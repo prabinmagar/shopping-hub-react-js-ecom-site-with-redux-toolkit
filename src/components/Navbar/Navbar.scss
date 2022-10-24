@@ -1,0 +1,164 @@
+@import "../../App.scss";
+
+.navbar{
+    padding: 16px 0 0 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    &-brand{
+        font-size: 30px;
+        font-weight: 700;
+
+        @media screen and (max-width: 992px){
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: 576px){
+            font-size: 20px;
+        }
+    }
+    &-search{
+        align-items: stretch;
+        input{
+            width: 100%;
+            border: 0.5px solid rgba(0, 0, 0, 0.05);
+            color: $clr-light-blue;
+            height: 44px;
+            padding: 4px 16px;
+            border-radius: 3px 0 0 3px;
+        }
+        .navbar-search-btn{
+            width: 60px;
+            height: 44px;
+            background-color: $clr-gold;
+            color: $clr-white;
+            transition: $transition;
+
+            &:hover{
+                background-color: $clr-regal-blue;
+            }
+        }
+    }
+
+    &-btns{
+        .add-to-cart-btn{
+            margin-right: 28px;
+            color: $clr-pine-green;
+            .btn-ico{
+                margin-right: 10px;
+            }
+            .btn-txt{
+                position: relative;
+                .cart-count-value{
+                    position: absolute;
+                    top: -10px;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $clr-gold;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    font-size: 14px;
+                    color: $clr-black;
+                    opacity: 0.8;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    .navbar-bottom{
+        padding: 10px 0;
+        margin-top: 14px;
+
+        > .container{
+            justify-content: flex-end;
+        }
+
+        .nav-links{
+            li{
+                margin: 0 10px;
+            }
+            .nav-link{
+                font-size: 14.5px;
+                transition: $transition;
+
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+        .navbar-show-btn{
+            transition: $transition;
+            display: none;
+
+            &:hover{
+                color: $clr-white;
+            }
+        }
+        .navbar-hide-btn{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 1200px){
+        .nav-links{
+            .nav-link{
+                font-size: 13px!important;
+            }
+        }
+    }
+
+    @media screen and (max-width: 992px){
+        .nav-links{
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 280px;
+            background-color: $clr-white;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: 60px;
+            padding-left: 16px;
+            transform: translateX(100%);
+            transition: $transition;
+            z-index: 999;
+            li{
+                margin-bottom: 10px!important;
+                border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+
+                .nav-link{
+                    color: $clr-regal-blue;
+                    font-size: 14px!important;
+                }
+            }
+        }
+        .show-nav-links{
+            transform: translateX(0);
+        }
+        .navbar-show-btn{
+            display: block!important;
+        }
+        .navbar-hide-btn{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 16px;
+            width: 24px;
+            height: 24px;
+            background-color: $clr-black;
+            border-radius: 50%;
+            display: flex!important;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        .navbar-top{
+            .navbar-search{
+                display: none;
+            }
+        }
+    }
+}

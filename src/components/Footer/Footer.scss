@@ -1,0 +1,44 @@
+@import "../../App.scss";
+.footer{
+    .footer-content{
+        row-gap: 20px;
+        .footer-item{
+            ul{
+                li{
+                    margin: 0.7rem 0;
+                    opacity: 0.8;
+                    transition: $transition;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:nth-child(4){
+                ul{
+                    li{
+                        span{
+                            &:first-child{
+                                margin-right: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 768px){
+            grid-template-columns: repeat(2, 1fr);
+            .footer-item{
+                text-align: left;
+            }
+        }
+
+        @media screen and (min-width: 992px){
+            grid-template-columns: repeat(4, 1fr);
+            .footer-item{
+                text-align: left;
+            }
+        }
+    }
+}

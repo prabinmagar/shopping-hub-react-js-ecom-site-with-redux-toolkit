@@ -1,0 +1,31 @@
+@import "../../App.scss";
+
+.category-items{
+    row-gap: 20px;
+    .category-item{
+        &-img{
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        &-name{
+            padding: 12px 0;
+        }
+    }
+
+    @media screen and (min-width: 576px){
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+
+    @media screen and (min-width: 992px){
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: 1200px){
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media screen and (min-width: 1400px){
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
